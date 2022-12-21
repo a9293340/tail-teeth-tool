@@ -18,7 +18,7 @@
     },
     "answer": {
       "desc": "C",
-      "detail": "1月9日——與巴哈馬建立外交關係",
+      "detail": ["1989年 1月9日——與巴哈馬建立外交關係"],
       "type": "text"
     }
   },
@@ -158,7 +158,7 @@
     },
     "answer": {
       "desc": "A",
-      "detail": "公司電話: 2696-2559 ; 公司傳真: 2696-2560 ; 公司統編: 2775-2996",
+      "detail": ["公司電話: 2696-2559","公司傳真: 2696-2560","公司統編: 2775-2996"],
       "type": "text"
     }
   },
@@ -196,15 +196,15 @@
     "options": {
       "type": "img",
       "desc": {
-        "A": "/img/8/A.jpg",
-        "B": "/img/8/B.jpg",
-        "C": "/img/8/C.jpg",
-        "D": "/img/8/D.jpg"
+        "A": "/img/9/A.jpg",
+        "B": "/img/9/B.jpg",
+        "C": "/img/9/C.jpg",
+        "D": "/img/9/D.jpg"
       }
     },
     "answer": {
       "desc": "B",
-      "detail": "/img/8/answer.jpg",
+      "detail": "/img/9/answer.jpg",
       "type": "img"
     }
   },
@@ -227,7 +227,7 @@
     },
     "answer": {
       "desc": "B",
-      "detail": "《何日君再來》這首30年代的老歌,自周旋首唱後,許多名歌星都演唱過,鄧麗君於1978年翻唱並灌錄入《一封情書》專輯。",
+      "detail": ["《何日君再來》這首30年代的老歌,自周旋首唱後,許多名歌星都演唱過,鄧麗君於1978年翻唱並灌錄入《一封情書》專輯。"],
       "type": "text"
     }
   },
@@ -250,7 +250,7 @@
     },
     "answer": {
       "desc": "D",
-      "detail": "GTA1 & GTA4 : 自由城 => 紐約 <br> GTA VC(罪惡城市) : 罪城 => 邁阿密 <br> GTA SA(聖安地列斯) & GTA5: 洛聖都 => 洛杉磯",
+      "detail": ["GTA1 & GTA4 : 自由城 => 紐約 "," GTA VC(罪惡城市) : 罪城 => 邁阿密 "," GTA SA(聖安地列斯) & GTA5: 洛聖都 => 洛杉磯"],
       "type": "text"
     }
   },
@@ -272,7 +272,7 @@
     },
     "answer": {
       "desc": "B",
-      "detail": "答錯太誇張",
+      "detail": ["答錯太誇張"],
       "type": "text"
     }
   },
@@ -294,7 +294,7 @@
     },
     "answer": {
       "desc": "B",
-      "detail": "答錯太誇張",
+      "detail": ["答錯太誇張"],
       "type": "text"
     }
   },
@@ -341,7 +341,7 @@
     },
     "answer": {
       "desc": "D",
-      "detail": "答錯太誇張",
+      "detail": ["答錯太誇張"],
       "type": "text"
     }
   }

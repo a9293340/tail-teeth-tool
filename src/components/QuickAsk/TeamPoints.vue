@@ -134,6 +134,7 @@ export default {
       teamScorePoint.value = plusData.value.map(
         (el, i) => teamScorePoint.value[i] + el
       );
+      await delay(400);
       plusData.value = [0, 0, 0, 0, 0, 0];
     });
 

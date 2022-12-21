@@ -30,7 +30,9 @@ export default {
 <template>
   <div class="answer-pop-window" v-if="Object.keys(pickConfig).length">
     <p v-if="pickConfig['answer']['type'] === 'text'">
-      {{ pickConfig["answer"]["detail"] }}
+      <span v-for="detail in pickConfig['answer']['detail']" :key="detail">
+        {{detail}}
+      </span>
     </p>
     <img
       :src="imgAns.data"
@@ -71,6 +73,13 @@ export default {
     font-size: 40px;
     font-weight: 900;
     color: $grey2;
+    @extend %flex-column-al-center-ju-start;
+    span{
+      width: 100%;
+      font-size: 40px;
+      font-weight: 900;
+      color: $grey2;
+    }
   }
   img {
     max-height: 100%;
