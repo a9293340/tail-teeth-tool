@@ -10,7 +10,7 @@ export default createStore({
     version: "",
     config: [],
     isShowShadow: false,
-    teamScorePoint: [5, 4, 0, 3, 6, 0],
+    teamScorePoint: [0, 0, 0, 0, 0, 0],
     plusData: [0, 0, 0, 0, 0, 0],
     borderColor: [
       "rgb(255,0,0)",
@@ -46,6 +46,7 @@ export default createStore({
         plus: 0,
       },
     },
+    com: "",
   },
   mutations: {
     setControlWindowActions(state, bool) {
@@ -77,6 +78,9 @@ export default createStore({
     },
     setTeamScore(state, obj) {
       state.teamScore = obj;
+    },
+    setCOM(state, obj) {
+      state.com = obj;
     },
   },
   actions: {
@@ -110,6 +114,9 @@ export default createStore({
     handleTeamScore({ commit }, str) {
       commit("setTeamScore", str);
     },
+    handleCOM({ commit }, str) {
+      commit("setCOM", str);
+    },
   },
   getters: {
     controlWindowActions(state) {
@@ -141,6 +148,9 @@ export default createStore({
     },
     teamScore(state) {
       return state.teamScore;
+    },
+    com(state) {
+      return state.com;
     },
   },
   modules: {

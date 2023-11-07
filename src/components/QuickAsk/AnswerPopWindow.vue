@@ -31,7 +31,7 @@ export default {
   <div class="answer-pop-window" v-if="Object.keys(pickConfig).length">
     <p v-if="pickConfig['answer']['type'] === 'text'">
       <span v-for="detail in pickConfig['answer']['detail']" :key="detail">
-        {{detail}}
+        {{ detail }}
       </span>
     </p>
     <img
@@ -55,9 +55,11 @@ export default {
 @import "~@/assets/css-api/_color.scss";
 @import "~@/assets/css-api/_format.scss";
 .answer-pop-window {
-  width: 1200px;
-  height: 850px;
+  width: 1000px;
+  height: 800px;
   position: fixed;
+  overflow-y: auto;
+  @extend %scroll;
   z-index: 30000;
   background-color: white;
   box-shadow: 5px 5px 10px rgba($color: #000000, $alpha: 0.3);
@@ -74,7 +76,7 @@ export default {
     font-weight: 900;
     color: $grey2;
     @extend %flex-column-al-center-ju-start;
-    span{
+    span {
       width: 100%;
       font-size: 40px;
       font-weight: 900;
@@ -82,8 +84,8 @@ export default {
     }
   }
   img {
-    max-height: 100%;
-    max-width: 100%;
+    width: 800px;
+    max-height: 99%;
   }
 }
 </style>

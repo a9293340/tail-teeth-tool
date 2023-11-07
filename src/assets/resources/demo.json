@@ -1,348 +1,887 @@
 [
-  {
-    "no": 1,
-    "type": "text",
-    "theme": "history",
-    "title": {
-      "desc": "請問下列哪個台灣大事件,並非發生於公司成立之時間?",
-      "type": "text"
-    },
-    "options": {
-      "desc": {
-        "A": "中華民國報禁正式完全解除",
-        "B": "台灣股市大放異彩，一舉衝破五千點大關",
-        "C": "與巴哈馬建立外交關係",
-        "D": "總統蔣經國逝世，李登輝繼任總統，成為首位台灣人總統"
-      },
-      "type": "text"
-    },
-    "answer": {
-      "desc": "C",
-      "detail": ["1989年 1月9日——與巴哈馬建立外交關係"],
-      "type": "text"
-    }
-  },
-  {
-    "no": 2,
-    "type": "img",
-    "theme": "television",
-    "title": {
-      "desc": "請問下列哪位不是徐錦江",
-      "type": "text"
-    },
-    "options": {
-      "type": "img",
-      "desc": {
-        "A": "/img/2/A.jpg",
-        "B": "/img/2/B.jpg",
-        "C": "/img/2/C.jpg",
-        "D": "/img/2/D.jpg"
-      }
-    },
-    "answer": {
-      "desc": "D",
-      "detail": "/img/2/D.jpg",
-      "type": "img"
-    }
-  },
-  {
-    "no": 3,
-    "type": "video",
-    "theme": "live",
-    "title": {
-      "desc": "請問皮卡丘小提琴家與警察們擊拳結束時，行人時間剩下幾秒",
-      "path": "https://www.youtube.com/embed/EjlG-dMzm3s",
-      "type": "video"
-    },
-    "options": {
-      "desc": {
-        "A": "2sec",
-        "B": "4sec",
-        "C": "1sec",
-        "D": "3sec"
-      },
-      "type": "text"
-    },
-    "answer": {
-      "desc": "D",
-      "detail": "https://www.youtube.com/embed/EjlG-dMzm3s?start=38",
-      "type": "video"
-    }
-  },
-  {
-    "no": 4,
-    "type": "img",
-    "theme": "professional",
-    "title": {
-      "desc": "請問圖片是下列哪種條碼",
-      "path": "/img/4/title.jpg",
-      "type": "img"
-    },
-    "options": {
-      "desc": {
-        "A": "EAN-13",
-        "B": "Plessey",
-        "C": "ITF-14",
-        "D": "Code128"
-      },
-      "type": "text"
-    },
-    "answer": {
-      "desc": "B",
-      "detail": "/img/4/answer.jpg",
-      "type": "img"
-    }
-  },
-  {
-    "no": 5,
-    "type": "text",
-    "theme": "live",
-    "title": {
-      "desc": "請問18樓公司對面的商業中心,總共包含幾間公司?",
-      "type": "text"
-    },
-    "options": {
-      "desc": {
-        "A": "18",
-        "B": "22",
-        "C": "26",
-        "D": "30"
-      },
-      "type": "text"
-    },
-    "answer": {
-      "desc": "C",
-      "detail": "/img/5/answer.jpg",
-      "type": "img"
-    }
-  },
-  {
-    "no": 6,
-    "type": "text",
-    "theme": "professional",
-    "title": {
-      "desc": "請問目前於powertool3.0中,下列並非S680現行的operation mode?",
-      "type": "text"
-    },
-    "options": {
-      "desc": {
-        "A": "Trigger mode",
-        "B": "Force mode",
-        "C": "Presentation mode",
-        "D": "Level mode"
-      },
-      "type": "text"
-    },
-    "answer": {
-      "desc": "D",
-      "detail": "/img/6/answer.jpg",
-      "type": "img"
-    }
-  },
-  {
-    "no": 7,
-    "type": "text",
-    "theme": "live",
-    "title": {
-      "desc": "公司傳真號碼?",
-      "type": "text"
-    },
-    "options": {
-      "desc": {
-        "A": "26962560",
-        "B": "26952659",
-        "C": "27752996",
-        "D": "26962559"
-      },
-      "type": "text"
-    },
-    "answer": {
-      "desc": "A",
-      "detail": ["公司電話: 2696-2559","公司傳真: 2696-2560","公司統編: 2775-2996"],
-      "type": "text"
-    }
-  },
-  {
-    "no": 8,
-    "type": "img",
-    "theme": "live",
-    "title": {
-      "desc": "面對公司大門,下列哪隻scanner是擺放在左手邊?",
-      "type": "text"
-    },
-    "options": {
-      "type": "img",
-      "desc": {
-        "A": "/img/8/A.jpg",
-        "B": "/img/8/B.jpg",
-        "C": "/img/8/C.jpg",
-        "D": "/img/8/D.jpg"
-      }
-    },
-    "answer": {
-      "desc": "D",
-      "detail": "/img/8/answer.jpg",
-      "type": "img"
-    }
-  },
-  {
-    "no": 9,
-    "type": "img",
-    "theme": "live",
-    "title": {
-      "desc": "下面哪個是公司logo?",
-      "type": "text"
-    },
-    "options": {
-      "type": "img",
-      "desc": {
-        "A": "/img/9/A.jpg",
-        "B": "/img/9/B.jpg",
-        "C": "/img/9/C.jpg",
-        "D": "/img/9/D.jpg"
-      }
-    },
-    "answer": {
-      "desc": "B",
-      "detail": "/img/9/answer.jpg",
-      "type": "img"
-    }
-  },
-  {
-    "no": 10,
-    "type": "text",
-    "theme": "television",
-    "title": {
-      "desc": "請問下列哪首歌不是鄧麗君'原唱'的歌?",
-      "type": "text"
-    },
-    "options": {
-      "desc": {
-        "A": "你在我心中",
-        "B": "何日君再來",
-        "C": "小城故事",
-        "D": "我怎能離開你"
-      },
-      "type": "text"
-    },
-    "answer": {
-      "desc": "B",
-      "detail": ["《何日君再來》這首30年代的老歌,自周旋首唱後,許多名歌星都演唱過,鄧麗君於1978年翻唱並灌錄入《一封情書》專輯。"],
-      "type": "text"
-    }
-  },
-  {
-    "no": 11,
-    "type": "text",
-    "theme": "game",
-    "title": {
-      "desc": "下列哪個地點並非知名沙盒開放遊戲GTA(俠盜獵車手)系列發生過的地方?",
-      "type": "text"
-    },
-    "options": {
-      "desc": {
-        "A": "紐約",
-        "B": "邁阿密",
-        "C": "洛杉磯",
-        "D": "西雅圖"
-      },
-      "type": "text"
-    },
-    "answer": {
-      "desc": "D",
-      "detail": ["GTA1 & GTA4 : 自由城 => 紐約 "," GTA VC(罪惡城市) : 罪城 => 邁阿密 "," GTA SA(聖安地列斯) & GTA5: 洛聖都 => 洛杉磯"],
-      "type": "text"
-    }
-  },
-  {
-    "no": 12,
-    "type": "img",
-    "theme": "live",
-    "title": {
-      "desc": "顏色?",
-      "path": "/img/12/title.jpg",
-      "type": "img"
-    },
-    "options": {
-      "desc": {
-        "A": "紅",
-        "B": "藍"
-      },
-      "type": "text"
-    },
-    "answer": {
-      "desc": "B",
-      "detail": ["答錯太誇張"],
-      "type": "text"
-    }
-  },
-  {
-    "no": 13,
-    "type": "img",
-    "theme": "live",
-    "title": {
-      "desc": "字?",
-      "path": "/img/13/title.jpg",
-      "type": "img"
-    },
-    "options": {
-      "desc": {
-        "A": "紅",
-        "B": "藍"
-      },
-      "type": "text"
-    },
-    "answer": {
-      "desc": "B",
-      "detail": ["答錯太誇張"],
-      "type": "text"
-    }
-  },
-  {
-    "no": 14,
-    "type": "text",
-    "theme": "live",
-    "title": {
-      "desc": "下列哪間咖啡廳位於宏碁大樓內?",
-      "type": "text"
-    },
-    "options": {
-      "desc": {
-        "A": "Yolo's Cafe",
-        "B": "QahWA Cafe",
-        "C": "STARBUCKS",
-        "D": "Redbuff Express"
-      },
-      "type": "text"
-    },
-    "answer": {
-      "desc": "B",
-      "detail": "/img/14/answer.jpg",
-      "type": "img"
-    }
-  },
-  {
-    "no": 15,
-    "type": "img",
-    "theme": "live",
-    "title": {
-      "desc": "下列哪個並未出現圖中?",
-      "path": "/img/15/title.jpg",
-      "type": "img"
-    },
-    "options": {
-      "desc": {
-        "A": "黃色",
-        "B": "藍字",
-        "C": "綠字",
-        "D": "紅色"
-      },
-      "type": "text"
-    },
-    "answer": {
-      "desc": "D",
-      "detail": ["答錯太誇張"],
-      "type": "text"
-    }
-  }
+	{
+		"no": 1,
+		"type": "text",
+		"theme": "history",
+		"title": {
+			"desc": "公司成立時間為1988年，請問下列哪個台灣大事件,並非發生於該年?",
+			"type": "text"
+		},
+		"options": {
+			"desc": {
+				"A": "中華民國報禁正式完全解除",
+				"C": "白河大地震",
+				"D": "總統蔣經國逝世，李登輝繼任總統，成為首位台灣人總統",
+				"B": "台灣股市大放異彩，一舉衝破五千點大關"
+			},
+			"type": "text"
+		},
+		"answer": {
+			"desc": "C",
+			"detail": ["1964年1月18日——白河大地震"],
+			"type": "text"
+		}
+	},
+	{
+		"no": 2,
+		"type": "img",
+		"theme": "television",
+		"title": { "desc": "請問下列哪位不是徐錦江", "type": "text" },
+		"options": {
+			"type": "img",
+			"desc": {
+				"D": "/img/2/D.jpg",
+				"C": "/img/2/C.jpg",
+				"A": "/img/2/A.jpg",
+				"B": "/img/2/B.jpg"
+			}
+		},
+		"answer": { "desc": "D", "detail": "/img/2/D.jpg", "type": "img" }
+	},
+	{
+		"no": 3,
+		"type": "video",
+		"theme": "live",
+		"title": {
+			"desc": "請問影片中三輪車上共有幾個人?",
+			"path": "https://www.youtube.com/embed/EjlG-dMzm3s",
+			"type": "video"
+		},
+		"options": {
+			"desc": { "C": "3", "A": "2", "D": "1", "B": "4" },
+			"type": "text"
+		},
+		"answer": { "desc": "D", "detail": "/img/3/answer.jpg", "type": "img" }
+	},
+	{
+		"no": 4,
+		"type": "img",
+		"theme": "professional",
+		"title": {
+			"desc": "圖片的條碼名稱是?",
+			"path": "/img/4/title.jpg",
+			"type": "img"
+		},
+		"options": {
+			"desc": {
+				"C": "PDF417",
+				"B": "Data Matrix",
+				"A": "Aztec",
+				"D": "QR code"
+			},
+			"type": "text"
+		},
+		"answer": { "desc": "B", "detail": "/img/4/answer.jpg", "type": "img" }
+	},
+	{
+		"no": 5,
+		"type": "text",
+		"theme": "live",
+		"title": {
+			"desc": "18樓公司對面的點亮商務中心,其中包含幾間公司?",
+			"type": "text"
+		},
+		"options": {
+			"desc": { "A": "19", "B": "21", "C": "25", "D": "29" },
+			"type": "text"
+		},
+		"answer": { "desc": "C", "detail": "/img/5/answer.jpg", "type": "img" }
+	},
+	{
+		"no": 6,
+		"type": "text",
+		"theme": "professional",
+		"title": {
+			"desc": "請問目前於powertool3.0中,下列並非S680現行的operation mode?",
+			"type": "text"
+		},
+		"options": {
+			"desc": {
+				"B": "Force mode",
+				"A": "Trigger mode",
+				"D": "Level mode",
+				"C": "Presentation mode"
+			},
+			"type": "text"
+		},
+		"answer": { "desc": "D", "detail": "/img/6/answer.jpg", "type": "img" }
+	},
+	{
+		"no": 7,
+		"type": "text",
+		"theme": "live",
+		"title": { "desc": "公司傳真號碼?", "type": "text" },
+		"options": {
+			"desc": {
+				"B": "26952659",
+				"C": "27752996",
+				"A": "26962560",
+				"D": "26962559"
+			},
+			"type": "text"
+		},
+		"answer": {
+			"desc": "A",
+			"detail": [
+				"公司電話: 2696-2559",
+				"公司傳真: 2696-2560",
+				"公司統編: 2775-2996"
+			],
+			"type": "text"
+		}
+	},
+	{
+		"no": 8,
+		"type": "img",
+		"theme": "live",
+		"title": {
+			"desc": "面對公司大門,下列哪隻scanner是擺放在左手邊?",
+			"type": "text"
+		},
+		"options": {
+			"type": "img",
+			"desc": {
+				"B": "/img/8/B.jpg",
+				"D": "/img/8/D.jpg",
+				"A": "/img/8/A.jpg",
+				"C": "/img/8/C.jpg"
+			}
+		},
+		"answer": { "desc": "D", "detail": "/img/8/answer.jpg", "type": "img" }
+	},
+	{
+		"no": 9,
+		"type": "img",
+		"theme": "live",
+		"title": { "desc": "下面哪個是公司logo?", "type": "text" },
+		"options": {
+			"type": "img",
+			"desc": {
+				"C": "/img/9/C.jpg",
+				"B": "/img/9/B.jpg",
+				"D": "/img/9/D.jpg",
+				"A": "/img/9/A.jpg"
+			}
+		},
+		"answer": { "desc": "B", "detail": "/img/9/answer.jpg", "type": "img" }
+	},
+	{
+		"no": 10,
+		"type": "text",
+		"theme": "television",
+		"title": { "desc": "請問下列哪首歌不是鄧麗君'原唱'的歌?", "type": "text" },
+		"options": {
+			"desc": {
+				"D": "我怎能離開你",
+				"A": "你在我心中",
+				"C": "小城故事",
+				"B": "何日君再來"
+			},
+			"type": "text"
+		},
+		"answer": {
+			"desc": "B",
+			"detail": [
+				"《何日君再來》這首30年代的老歌,自周旋首唱後,許多名歌星都演唱過,鄧麗君於1978年翻唱並灌錄入《一封情書》專輯。"
+			],
+			"type": "text"
+		}
+	},
+	{
+		"no": 11,
+		"type": "text",
+		"theme": "game",
+		"title": {
+			"desc": "請問薩爾達傳說，玩家扮演的角色叫什麼名字?",
+			"type": "text"
+		},
+		"options": {
+			"desc": { "C": "茵帕", "B": "薩爾達", "D": "林克", "A": "加農" },
+			"type": "text"
+		},
+		"answer": {
+			"desc": "D",
+			"detail": [
+				"該系列遊戲內容皆為玩家在不同時代扮演勇者林克拯救薩爾達公主的故事"
+			],
+			"type": "text"
+		}
+	},
+	{
+		"no": 14,
+		"type": "text",
+		"theme": "live",
+		"title": { "desc": "下列哪間咖啡店並非位於東科大樓?", "type": "text" },
+		"options": {
+			"desc": {
+				"B": "QahWA Cafe",
+				"D": "Redbuff Express",
+				"C": "STARBUCKS",
+				"A": "Yolo's Cafe"
+			},
+			"type": "text"
+		},
+		"answer": { "desc": "B", "detail": "/img/14/answer.jpg", "type": "img" }
+	},
+	{
+		"no": 16,
+		"type": "text",
+		"theme": "live",
+		"title": { "desc": "哪種季節最會家暴?", "type": "text" },
+		"options": {
+			"desc": { "A": "春天", "D": "冬天", "B": "夏天", "C": "秋天" },
+			"type": "text"
+		},
+		"answer": {
+			"desc": "D",
+			"detail": ["因為冬天會'動手動腳'(凍手凍腳)"],
+			"type": "text"
+		}
+	},
+	{
+		"no": 17,
+		"type": "text",
+		"theme": "live",
+		"title": { "desc": "下列哪種氣候狀況是司機最恐懼的?", "type": "text" },
+		"options": {
+			"desc": { "D": "寒流", "C": "乾旱", "A": "颱風", "B": "梅雨" },
+			"type": "text"
+		},
+		"answer": {
+			"desc": "B",
+			"detail": ["因為梅雨時期會'開除司機'(開除濕機)"],
+			"type": "text"
+		}
+	},
+	{
+		"no": 18,
+		"type": "text",
+		"theme": "live",
+		"title": {
+			"desc": "請問公司18樓第一會議室總共有幾張椅子?",
+			"type": "text"
+		},
+		"options": {
+			"desc": { "C": "11", "A": "9", "B": "10", "D": "12" },
+			"type": "text"
+		},
+		"answer": { "desc": "C", "detail": "/img/18/answer.jpg", "type": "img" }
+	},
+	{
+		"no": 20,
+		"type": "text",
+		"theme": "live",
+		"title": {
+			"desc": "下列何者為Google台灣 2022 年搜尋排行榜第二名?",
+			"type": "text"
+		},
+		"options": {
+			"desc": { "B": "youtube", "A": "翻譯", "C": "yahoo", "D": "天氣" },
+			"type": "text"
+		},
+		"answer": { "desc": "B", "detail": "/img/20/answer.jpg", "type": "img" }
+	},
+	{
+		"no": 21,
+		"type": "text",
+		"theme": "game",
+		"title": { "desc": "下列哪款並非任天堂所開發的遊戲?", "type": "text" },
+		"options": {
+			"desc": {
+				"A": "星之卡比",
+				"B": "薩爾達傳說: 曠野之息",
+				"D": "超級瑪利歐兄弟",
+				"C": "寶可夢 紅／綠"
+			},
+			"type": "text"
+		},
+		"answer": {
+			"desc": "C",
+			"detail": [
+				"《寶可夢 紅／綠》是由GAME FREAK開發、任天堂發行的Game Boy角色扮演遊戲"
+			],
+			"type": "text"
+		}
+	},
+	{
+		"no": 22,
+		"type": "text",
+		"theme": "television",
+		"title": {
+			"desc": "《復仇者聯盟：無限之戰》中，奇異博士率先看過了多少個可能發生的結局?",
+			"type": "text"
+		},
+		"options": {
+			"desc": {
+				"D": "1500萬605個",
+				"A": "1400萬605個",
+				"B": "1300萬605個",
+				"C": "1600萬605個"
+			},
+			"type": "text"
+		},
+		"answer": {
+			"desc": "A",
+			"detail": [
+				"在《復仇者聯盟：無限之戰》中，奇異博士看到了14000605個結果，終於看到1個勝利的結局"
+			],
+			"type": "text"
+		}
+	},
+	{
+		"no": 23,
+		"type": "text",
+		"theme": "television",
+		"title": {
+			"desc": "哩咕哩咕新年財中，請問詠琪最後幫德華求了幾億?",
+			"type": "text"
+		},
+		"options": {
+			"desc": { "A": "6億", "C": "8億", "B": "7億", "D": "9億" },
+			"type": "text"
+		},
+		"answer": { "desc": "C", "detail": "/img/23/answer.jpg", "type": "img" }
+	},
+	{
+		"no": 24,
+		"type": "text",
+		"theme": "professional",
+		"title": { "desc": "肛門是屬於哪一種器官?", "type": "text" },
+		"options": {
+			"type": "text",
+			"desc": {
+				"C": "排泄器官",
+				"B": "神經器官",
+				"D": "生殖器官",
+				"A": "消化器官"
+			}
+		},
+		"answer": {
+			"desc": "A",
+			"detail": [
+				"消化系統由消化腺和消化道兩大部分組成；消化道包括口腔、咽、食道、胃、小腸、大腸、肛門"
+			],
+			"type": "text"
+		}
+	},
+	{
+		"no": 25,
+		"type": "text",
+		"theme": "television",
+		"title": {
+			"desc": "周星馳在唐伯虎點秋香中，假扮下人時他的代號為多少?",
+			"type": "text"
+		},
+		"options": {
+			"type": "text",
+			"desc": { "B": "0487", "C": "9527", "D": "8787", "A": "5487" }
+		},
+		"answer": {
+			"desc": "C",
+			"detail": [
+				"周星馳飾演的唐伯虎到華府後，被列為低等下人，連名字都沒有，只被編上了「9527」的數字"
+			],
+			"type": "text"
+		}
+	},
+	{
+		"no": 27,
+		"type": "text",
+		"theme": "live",
+		"title": {
+			"desc": "下列哪個企業非統一企業的相關企業?",
+			"type": "text"
+		},
+		"options": {
+			"desc": {
+				"D": "沃克牛排",
+				"A": "星巴克",
+				"B": "多拿滋",
+				"C": "博客來"
+			},
+			"type": "text"
+		},
+		"answer": {
+			"desc": "D",
+			"detail": ["沃克牛排 為全家的相關企業"],
+			"type": "text"
+		}
+	},
+	{
+		"no": 28,
+		"type": "text",
+		"theme": "live",
+		"title": {
+			"desc": "一閃一閃亮晶晶，滿天都是小星星。請問星星有多重?",
+			"type": "text"
+		},
+		"options": {
+			"type": "text",
+			"desc": { "B": "4克", "A": "2克", "D": "8克", "C": "6克" }
+		},
+		"answer": {
+			"desc": "D",
+			"detail": ["8克，因為星巴克...國小生提供"],
+			"type": "text"
+		}
+	},
+	{
+		"no": 29,
+		"type": "text",
+		"theme": "television",
+		"title": {
+			"desc": "賭神1中，賭神偷雞前摸戒指的動作，是從第幾副牌加進去的?",
+			"type": "text"
+		},
+		"options": {
+			"type": "text",
+			"desc": { "C": "600", "D": "300", "B": "400", "A": "500" }
+		},
+		"answer": { "desc": "A", "detail": "/img/29/answer.jpg", "type": "img" }
+	},
+	{
+		"no": 30,
+		"type": "text",
+		"theme": "live",
+		"title": { "desc": "請問26樓會議室內的儲藏櫃門把顏色是?", "type": "text" },
+		"options": {
+			"type": "text",
+			"desc": { "D": "黃色", "A": "黑色", "C": "白色", "B": "綠色" }
+		},
+		"answer": { "desc": "D", "detail": "/img/30/answer.jpg", "type": "img" }
+	},
+	{
+		"no": 31,
+		"type": "text",
+		"theme": "",
+		"title": { "desc": "北極熊的皮膚顏色是 ?", "type": "text" },
+		"options": {
+			"type": "text",
+			"desc": { "D": "黃色", "C": "棕色", "B": "黑色", "A": "白色" }
+		},
+		"answer": {
+			"desc": "B",
+			"detail": [
+				"我們肉眼所看見的白色毛髮，是一根根中空而透明的毛管，在冰層反射下成為白色，但在這底下，北極熊的皮膚顏色為黑色。"
+			],
+			"type": "text"
+		}
+	},
+	{
+		"no": 32,
+		"type": "text",
+		"theme": "",
+		"title": { "desc": "電影少林足球中，大師兄的武功？", "type": "text" },
+		"options": {
+			"type": "text",
+			"desc": {
+				"C": "金鐘罩鐵布衫",
+				"A": "鬼影擒拿手",
+				"B": "無堅不摧鐵頭功",
+				"D": "風火地堂腿"
+			}
+		},
+		"answer": {
+			"desc": "B",
+			"detail": [
+				"大師兄無堅不摧鐵頭功、二師兄旋風地堂腿、三師兄金鐘罩鐵布衫、四師兄鬼影擒拿手、六師弟輕功水上飄物"
+			],
+			"type": "text"
+		}
+	},
+	{
+		"no": 33,
+		"type": "text",
+		"theme": "",
+		"title": {
+			"desc": "三國演義中的空城計，空城指的是哪一個縣？",
+			"type": "text"
+		},
+		"options": {
+			"type": "text",
+			"desc": { "C": "桐城", "B": "西城", "A": "東城", "D": "當陽" }
+		},
+		"answer": {
+			"desc": "B",
+			"detail": [
+				"空城計又叫“西城弄險”。司馬懿率兵乘勝直逼西城，諸葛亮無兵迎敵，但沉著鎮定，大開城門，自己在城樓上彈琴唱曲。"
+			],
+			"type": "text"
+		}
+	},
+	{
+		"no": 34,
+		"type": "text",
+		"theme": "",
+		"title": { "desc": "請問尋秦記的作者是？", "type": "text" },
+		"options": {
+			"type": "text",
+			"desc": { "C": "金庸", "B": "古龍", "A": "秦始皇", "D": "黃易" }
+		},
+		"answer": {
+			"desc": "D",
+			"detail": [
+				"黃易，原名黃祖強，香港玄幻武俠小說家。",
+				"著有《尋秦記》、《大唐雙龍傳》和《覆雨翻雲》等代表作"
+			],
+			"type": "text"
+		}
+	},
+	{
+		"no": 35,
+		"type": "text",
+		"theme": "",
+		"title": { "desc": "河馬會游泳，還是會跑步？", "type": "text" },
+		"options": {
+			"type": "text",
+			"desc": {
+				"B": "不會游泳，不會跑步",
+				"C": "不會游泳，會跑步",
+				"D": "會游泳，會跑步",
+				"A": "會游泳，不會跑步"
+			}
+		},
+		"answer": {
+			"desc": "C",
+			"detail": ["河馬不會游泳，只是在不超過自己身高的水中走動。"],
+			"type": "text"
+		}
+	},
+	{
+		"no": 36,
+		"type": "text",
+		"theme": "",
+		"title": { "desc": "科學小飛俠的隊長是？", "type": "text" },
+		"options": {
+			"type": "text",
+			"desc": { "C": "鐵雄", "D": "黑雄", "A": "阿雄", "B": "大雄" }
+		},
+		"answer": {
+			"desc": "C",
+			"detail": [
+				"「科學小飛俠」的五名成員分別為：",
+				"鐵雄",
+				"大明",
+				"珍珍",
+				"阿丁",
+				"阿龍"
+			],
+			"type": "text"
+		}
+	},
+	{
+		"no": 37,
+		"type": "text",
+		"theme": "",
+		"title": {
+			"desc": "請問三角柱有幾個面？幾個邊？幾個頂點？",
+			"type": "text"
+		},
+		"options": {
+			"type": "text",
+			"desc": {
+				"B": "5個面、9個邊和6個頂點",
+				"A": "5個面、8個邊和3個頂點",
+				"C": "5個面、6個邊和7個頂點",
+				"D": "5個面、9個邊和4個頂點"
+			}
+		},
+		"answer": { "desc": "B", "detail": "/img/37/answer.jpg", "type": "img" }
+	},
+	{
+		"no": 38,
+		"type": "text",
+		"theme": "",
+		"title": {
+			"desc": "大多數撲克牌中唯一沒有鬍子的老K是哪一張？",
+			"type": "text"
+		},
+		"options": {
+			"type": "text",
+			"desc": { "D": "黑桃Ｋ", "C": "紅心Ｋ", "B": "方塊Ｋ", "A": "梅花Ｋ" }
+		},
+		"answer": { "desc": "C", "detail": "/img/38/answer.jpg", "type": "img" }
+	},
+	{
+		"no": 39,
+		"type": "text",
+		"theme": "",
+		"title": { "desc": "請問台灣最長的人工隧道是？", "type": "text" },
+		"options": {
+			"type": "text",
+			"desc": {
+				"A": "辛亥隧道",
+				"B": "萬里隧道",
+				"D": "雪山隧道",
+				"C": "八卦山隧道"
+			}
+		},
+		"answer": {
+			"desc": "D",
+			"detail": [
+				"辛亥隧道 : 全長487.5公尺",
+				"萬里隧道 : 全長約1 公里",
+				"八卦山隧道 : 長約5公里",
+				"雪山隧道 : 全長約12.9公里"
+			],
+			"type": "text"
+		}
+	},
+	{
+		"no": 40,
+		"type": "text",
+		"theme": "",
+		"title": { "desc": "全世界最多金字塔的國家是哪一個?", "type": "text" },
+		"options": {
+			"type": "text",
+			"desc": { "C": "馬雅", "B": "蘇丹", "D": "中國", "A": "埃及" }
+		},
+		"answer": {
+			"desc": "B",
+			"detail": ["蘇丹目前約有220座金字塔, 埃及目前約為112座"],
+			"type": "text"
+		}
+	},
+	{
+		"no": 41,
+		"type": "text",
+		"theme": "",
+		"title": {
+			"desc": "請問在太空中以下何種行為不可能會發生在太空人身上?",
+			"type": "text"
+		},
+		"options": {
+			"type": "text",
+			"desc": {
+				"C": "淚流滿面",
+				"D": "在月球上品嘗月餅、宮保雞丁等美食",
+				"B": "長高3公分",
+				"A": "放屁會造成爆炸"
+			}
+		},
+		"answer": {
+			"desc": "C",
+			"detail": [
+				"@ 屁中的氫和甲烷等成分還是可燃氣體，嚴重時可引起爆炸。",
+				"@ 當人類脊椎不再受到地球引力牽引時，椎骨將會膨脹和放鬆，使得太空人會變高，最多可達3公分。",
+				"@ 太空中是無法「流」淚，因為在無重力狀態下，淚腺把眼淚擠壓出來後，眼淚會從眼眶裡飄走，而不是從臉上流下。",
+				"@ 如今有羅宋湯、宮保雞丁、海鮮、水果等太空食物"
+			],
+			"type": "text"
+		}
+	},
+	{
+		"no": 42,
+		"type": "text",
+		"theme": "",
+		"title": { "desc": "下列何者關於魯冰花的資訊是錯的?", "type": "text" },
+		"options": {
+			"type": "text",
+			"desc": {
+				"B": "編劇是吳念真",
+				"A": "出品於1988年的臺灣電影",
+				"C": "聯合國教科文組織：人道精神特別獎",
+				"D": "魯冰花是一種花。"
+			}
+		},
+		"answer": {
+			"desc": "A",
+			"detail": ["魯冰花是一部出品於1989年的臺灣電影"],
+			"type": "text"
+		}
+	},
+	{
+		"no": 43,
+		"type": "text",
+		"theme": "",
+		"title": {
+			"desc": "神鵰俠侶中，下列兵器哪把不是楊過曾經持有過的?",
+			"type": "text"
+		},
+		"options": {
+			"type": "text",
+			"desc": { "A": "玄鐵重劍", "C": "君子劍", "D": "打狗棒", "B": "紫薇軟劍" }
+		},
+		"answer": {
+			"desc": "B",
+			"detail": [
+				"獨孤求敗 : 三十歲前所用，誤傷義士不祥，悔恨無已，乃棄之深谷。 => 所以楊過沒拿過"
+			],
+			"type": "text"
+		}
+	},
+	{
+		"no": 44,
+		"type": "text",
+		"theme": "",
+		"title": { "desc": "請問下列哪個不是全真七子?", "type": "text" },
+		"options": {
+			"type": "text",
+			"desc": { "B": "孫不二", "C": "莫聲谷", "A": "馬鈺", "D": "丘處機" }
+		},
+		"answer": {
+			"desc": "C",
+			"detail": ["莫聲谷 是武當七俠老七"],
+			"type": "text"
+		}
+	},
+	{
+		"no": 45,
+		"type": "text",
+		"theme": "",
+		"title": {
+			"desc": "在電影賭俠2之上海灘賭聖中，周星馳對戰法國賭神皮爾卡頌時，是使用下列哪個名號?",
+			"type": "text"
+		},
+		"options": {
+			"type": "text",
+			"desc": { "A": "賭神", "C": "今晚打老虎", "B": "賭聖", "D": "賭俠" }
+		},
+		"answer": {
+			"desc": "C",
+			"detail": ["今晚打老虎是法文“Comment-allez vous”的諧音"],
+			"type": "text"
+		}
+	},
+	{
+		"no": 46,
+		"type": "text",
+		"theme": "",
+		"title": { "desc": "明天是2022年10月2日，昨天?", "type": "text" },
+		"options": {
+			"type": "text",
+			"desc": { "C": "9月31日", "D": "10月1日", "A": "9月29日", "B": "9月30日" }
+		},
+		"answer": {
+			"desc": "B",
+			"detail": ["昨:9月30日", "今:10月1日", "明:10月2日"],
+			"type": "text"
+		}
+	},
+	{
+		"no": 47,
+		"type": "text",
+		"theme": "",
+		"title": {
+			"desc": "英文字母A~Z，哪兩個最常吵架，遇到就會爆炸?",
+			"type": "text"
+		},
+		"options": {
+			"type": "text",
+			"desc": { "D": "W,C", "A": "N,G", "C": "O,K", "B": "C,D" }
+		},
+		"answer": {
+			"desc": "C",
+			"detail": ["O,K->因為 OK~繃(碰~)..."],
+			"type": "text"
+		}
+	},
+	{
+		"no": 48,
+		"type": "text",
+		"theme": "",
+		"title": {
+			"desc": "數字0~9，哪個數字最懶惰，哪個數字最勤勞?",
+			"type": "text"
+		},
+		"options": {
+			"type": "text",
+			"desc": { "B": "3,4", "C": "5,6", "D": "7,8", "A": "1,2" }
+		},
+		"answer": {
+			"desc": "A",
+			"detail": ["因為一不做，二不休..."],
+			"type": "text"
+		}
+	},
+	{
+		"no": 49,
+		"type": "text",
+		"theme": "",
+		"title": { "desc": "現任英國首相為?", "type": "text" },
+		"options": {
+			"type": "text",
+			"desc": {
+				"C": "魔術 強森(Magic Johnson)",
+				"D": "里希 蘇納克(Rishi Sunak)",
+				"A": "巨石 強森 (Dwayne Johnson)",
+				"B": "鮑里斯 強森 (Boris Johnson)"
+			}
+		},
+		"answer": {
+			"desc": "D",
+			"detail": ["里希 蘇納克(Rishi Sunak) 現任英國首相於 2022年10月25日 就任"],
+			"type": "text"
+		}
+	},
+	{
+		"no": 50,
+		"type": "text",
+		"theme": "",
+		"title": { "desc": "數字 0 ~ 100 ，有幾個 8 ?", "type": "text" },
+		"options": {
+			"type": "text",
+			"desc": { "D": "19個", "C": "18個", "B": "17個", "A": "16個" }
+		},
+		"answer": {
+			"desc": "D",
+			"detail": ["08,18,28,38,48,58,68,78,88,98,80,81,82,83,84,85,86,87,89"],
+			"type": "text"
+		}
+	},
+	{
+		"no": 51,
+		"type": "text",
+		"theme": "",
+		"title": {
+			"desc": "2022年世界杯足球賽(FIFA WORLD CUP)季軍隊伍?",
+			"type": "text"
+		},
+		"options": {
+			"type": "text",
+			"desc": { "B": "阿根廷", "A": "克羅埃西亞", "D": "摩洛哥", "C": "法國" }
+		},
+		"answer": {
+			"desc": "A",
+			"detail": ["冠軍:阿根廷", "亞軍:法國", "季軍:克羅埃西亞", "殿軍:摩洛哥"],
+			"type": "text"
+		}
+	},
+	{
+		"no": 52,
+		"type": "text",
+		"theme": "",
+		"title": {
+			"desc": "少年漫畫遊戲王中，經常在決鬥中說的詞彙'抖肉'，請問是什麼意思?",
+			"type": "text"
+		},
+		"options": {
+			"type": "text",
+			"desc": { "C": "抽牌", "A": "抖一下肉", "D": "決鬥吧", "B": "安安你好" }
+		},
+		"answer": {
+			"desc": "C",
+			"detail": ["抖肉為日文 ドロー 直接音譯，意思為抽牌"],
+			"type": "text"
+		}
+	},
+	{
+		"no": 53,
+		"type": "text",
+		"theme": "",
+		"title": {
+			"desc": "漫威宇宙中總共有六種無限寶石，請問無限手套手背上的寶石是下列哪款?",
+			"type": "text"
+		},
+		"options": {
+			"type": "text",
+			"desc": {
+				"B": "空間寶石",
+				"C": "力量寶石",
+				"D": "心靈寶石",
+				"A": "現實寶石"
+			}
+		},
+		"answer": { "desc": "D", "detail": "/img/53/answer.jpg", "type": "img" }
+	}
 ]

@@ -4,6 +4,8 @@ export default {
     triggerTimeout: 0,
     triggerSettlement: 0,
     triggerChart: 0,
+    triggerReset: 0,
+    triggerFinalSettlement: 0,
   },
   mutations: {
     setTriggerTimeout(state, int) {
@@ -14,6 +16,12 @@ export default {
     },
     setTriggerChart(state, int) {
       state.triggerChart = int;
+    },
+    setTriggerCReset(state, int) {
+      state.triggerReset = int;
+    },
+    setTriggerFinalSettlement(state, int) {
+      state.triggerFinalSettlement = int;
     },
   },
   actions: {
@@ -26,6 +34,12 @@ export default {
     handleTriggerChart({ commit }, int) {
       commit("setTriggerChart", int);
     },
+    handleTriggerReset({ commit }, int) {
+      commit("setTriggerCReset", int);
+    },
+    handleTriggerFinalSettlement({ commit }, int) {
+      commit("setTriggerFinalSettlement", int);
+    },
   },
   getters: {
     triggerTimeout(state) {
@@ -36,6 +50,12 @@ export default {
     },
     triggerChart(state) {
       return state.triggerChart;
+    },
+    triggerReset(state) {
+      return state.triggerReset;
+    },
+    triggerFinalSettlement(state) {
+      return state.triggerFinalSettlement;
     },
   },
 };

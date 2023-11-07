@@ -17,14 +17,13 @@ async function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
     width: 1440,
-    height: 960,
+    height: 860,
     autoHideMenuBar: false,
     show: false,
     frame: false,
     useContentSize: true,
     // resizable: false,
     hasShadow: true,
-    icon: path.join(__static, "ard49-1fc78-001.ico"),
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info

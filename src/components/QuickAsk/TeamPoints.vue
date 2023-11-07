@@ -20,14 +20,19 @@ export default {
     const borderColor = computed(() => store.getters.borderColor);
     const maxScale = computed(() => _.max(teamScorePoint.value) + 7);
     const triggerChart = computed(() => store.getters["trigger/triggerChart"]);
+    const triggerReset = computed(() => store.getters["trigger/triggerReset"]);
+    const triggerFinalSettlement = computed(
+      () => store.getters["trigger/triggerFinalSettlement"]
+    );
     const plusData = ref([0, 0, 0, 0, 0, 0]);
     const doughnutRef = ref();
     const backgroundColor = borderColor.value.map(
       (el) =>
-        `${el.slice(0, _.lastIndexOf(el.split(""), ")"))},0.2${el.slice(
+        `${el.slice(0, _.lastIndexOf(el.split(""), ")"))},0.4${el.slice(
           _.lastIndexOf(el.split(""), ")")
         )}`
     );
+
     const chartData = computed(() => ({
       labels: ["team 1", "team 2", "team 3", "team 4", "team 5", "team 6"],
       datasets: [
@@ -138,6 +143,40 @@ export default {
       plusData.value = [0, 0, 0, 0, 0, 0];
     });
 
+    watch(triggerReset, () => {
+      store.dispatch("handleTeamScore", {
+        1: {
+          now: 0,
+          plus: 0,
+        },
+        2: {
+          now: 0,
+          plus: 0,
+        },
+        3: {
+          now: 0,
+          plus: 0,
+        },
+        4: {
+          now: 0,
+          plus: 0,
+        },
+        5: {
+          now: 0,
+          plus: 0,
+        },
+        6: {
+          now: 0,
+          plus: 0,
+        },
+      });
+      teamScorePoint.value = [0, 0, 0, 0, 0, 0];
+    });
+
+    watch(triggerFinalSettlement, () =>
+      store.dispatch("handleTeamScorePoint", teamScorePoint.value)
+    );
+
     const obj2Arr = (obj, key) => {
       let arr = [];
       for (const valueKey in obj) {
@@ -177,9 +216,10 @@ export default {
 .team-points-component {
   width: 100%;
   height: 100%;
-  @extend %flex-row-center;
+  position: relative;
+  @extend %flex-row-start;
   .bar {
-    width: 100%;
+    width: 90%;
     height: 100%;
   }
 }

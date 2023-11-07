@@ -123,14 +123,16 @@ export default {
       width: 100%;
       height: 20%;
       margin-bottom: 4%;
-      @extend %flex-row-center;
+      @extend %flex-row-start;
       padding: 20px;
       background-color: $blue2;
       border-radius: 8px;
       p {
-        font-size: 36px;
+        font-size: 28px;
         font-weight: 900;
         color: white;
+        @extend %flex-row-start;
+        align: left;
       }
     }
     .is-answer {

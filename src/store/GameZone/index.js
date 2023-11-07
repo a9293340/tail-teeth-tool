@@ -6,6 +6,9 @@ export default {
     isGoing: false,
     isImgOptions: false,
     isShowOptions: false,
+    scanBuffer: [],
+    checkScanList: [],
+    isShowSettlement: false,
   },
   mutations: {
     setPickConfig(state, obj) {
@@ -22,6 +25,15 @@ export default {
     },
     setIsShowOptions(state, bool) {
       state.isShowOptions = bool;
+    },
+    setScanBuffer(state, bool) {
+      state.scanBuffer = bool;
+    },
+    setCheckScanList(state, bool) {
+      state.checkScanList = bool;
+    },
+    setIsShowSettlement(state, bool) {
+      state.isShowSettlement = bool;
     },
   },
   actions: {
@@ -40,6 +52,15 @@ export default {
     handleIsShowOptions({ commit }, str) {
       commit("setIsShowOptions", str);
     },
+    handleScanBuffer({ commit }, str) {
+      commit("setScanBuffer", str);
+    },
+    handleCheckScanList({ commit }, str) {
+      commit("setCheckScanList", str);
+    },
+    handleIsShowSettlement({ commit }, str) {
+      commit("setIsShowSettlement", str);
+    },
   },
   getters: {
     pickConfig(state) {
@@ -56,6 +77,15 @@ export default {
     },
     isShowOptions(state) {
       return state.isShowOptions;
+    },
+    scanBuffer(state) {
+      return state.scanBuffer;
+    },
+    checkScanList(state) {
+      return state.checkScanList;
+    },
+    isShowSettlement(state) {
+      return state.isShowSettlement;
     },
   },
 };

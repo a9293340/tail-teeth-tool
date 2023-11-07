@@ -1,12 +1,13 @@
 <script>
 import { useStore } from "vuex";
 import { computed, ref, watch } from "vue";
+import { delay } from "@/assets/api/delay";
 
 export default {
   name: "TextZone",
   setup() {
     const store = useStore();
-    const borderColor = computed(() => store.getters.borderColor);
+    const borderColors = computed(() => store.getters.borderColor);
     const scanOutputData = ref([]);
     const inputPlusData = ref([0, 0, 0, 0, 0, 0]);
     const triggerSettlement = computed(
@@ -15,10 +16,25 @@ export default {
     const triggerChart = computed(() => store.getters["trigger/triggerChart"]);
     const pickConfig = computed(() => store.getters["GameZone/pickConfig"]);
     const teamScore = computed(() => store.getters.teamScore);
-    let tempData = ["4:A", "1:D", "3:C", "5:B", "2:B", "6:B"];
+    const scanBuffer = computed(() => store.getters["GameZone/scanBuffer"]);
+    const timeCount = computed(() => store.getters["GameZone/timeCount"]);
+    const checkScanList = computed(
+      () => store.getters["GameZone/checkScanList"]
+    );
+    // let tempData = ["4:A", "1:D", "3:C", "5:B", "2:B", "6:B"];
 
-    watch(triggerSettlement, () => {
-      scanOutputData.value = tempData.map((el) => el.split(":"));
+    watch(timeCount, (newIndex) => {
+      if (newIndex === "20") {
+        scanOutputData.value = [];
+        inputPlusData.value = [0, 0, 0, 0, 0, 0];
+      }
+    });
+
+    watch(triggerSettlement, async () => {
+      await delay(500);
+      console.log(scanBuffer.value);
+      scanOutputData.value = scanBuffer.value.map((el) => el.split(":"));
+      await delay(500);
       let score = 6;
       setTimeout(() => {
         inputPlusData.value = scanOutputData.value.map((scan) =>
@@ -39,9 +55,10 @@ export default {
     };
 
     return {
-      borderColor,
+      borderColors,
       scanOutputData,
       inputPlusData,
+      checkScanList,
     };
   },
 };
@@ -50,17 +67,28 @@ export default {
 <template>
   <div class="text-zone-component">
     <div class="title">Scanner Output :</div>
-    <div class="answer-lists" v-if="scanOutputData.length">
+    <div
+      class="answer-lists"
+      v-if="scanOutputData.length || checkScanList.length"
+    >
       <p
         class="list"
-        :style="{ color: borderColor[parseInt(data[0]) - 1] }"
+        :style="{ color: borderColors[parseInt(data[0]) - 1] }"
         v-for="(data, i) in scanOutputData"
         :key="data + '1'"
       >
         第{{ data[0] }}組 : {{ data[1] }}
-        <span :class="{ toOpacity: !!inputPlusData[i] }">
+        <span :class="{ toOpacity: inputPlusData[i] }">
           + {{ inputPlusData[i] }}
         </span>
+      </p>
+      <p
+        class="list"
+        :style="{ color: borderColors[parseInt(data) - 1] }"
+        v-for="data in checkScanList"
+        :key="data + '1'"
+      >
+        第{{ data }}組 : OK
       </p>
     </div>
   </div>
@@ -91,7 +119,7 @@ export default {
   padding: 10px;
   @extend %flex-column-al-start-ju-start;
   .title {
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 900;
     color: $grey2;
     margin-bottom: 8px;
@@ -100,13 +128,13 @@ export default {
     padding-left: 20px;
     @extend %flex-column-al-start-ju-start;
     p.list {
-      font-size: 30px;
-      margin-bottom: 10px;
+      font-size: 24px;
+      margin-bottom: 5px;
       margin-top: 0;
       position: relative;
       span {
         width: 50px;
-        font-size: 26px;
+        font-size: 20px;
         position: absolute;
         left: 140px;
         top: -8px;

@@ -1,6 +1,6 @@
 <script>
 import { useStore } from "vuex";
-import { computed, getCurrentInstance } from "vue";
+import { computed } from "vue";
 import TimeCounter from "@/components/QuickAsk/TimeCounter";
 import TeamPoints from "@/components/QuickAsk/TeamPoints";
 import TextZone from "@/components/QuickAsk/TextZone";

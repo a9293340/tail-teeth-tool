@@ -1,11 +1,22 @@
 <script>
+import Serialport from "serialport";
 import { useStore } from "vuex";
-import { computed, getCurrentInstance, onBeforeMount, onMounted } from "vue";
+import {
+  computed,
+  getCurrentInstance,
+  onBeforeMount,
+  onMounted,
+  ref,
+} from "vue";
 import AnswerPopWindow from "@/components/QuickAsk/AnswerPopWindow";
+import TestingPop from "@/components/TestingPop";
+import SettlementPop from "@/components/QuickAsk/SettlementPop";
 
 export default {
   components: {
     AnswerPopWindow,
+    TestingPop,
+    SettlementPop,
   },
   setup() {
     const store = useStore();
@@ -14,7 +25,15 @@ export default {
     );
     const isShowShadow = computed(() => store.getters.isShowShadow);
     const pickConfig = computed(() => store.getters["GameZone/pickConfig"]);
-    const { _ } = getCurrentInstance().appContext.config.globalProperties;
+    const { _: lodash } =
+      getCurrentInstance().appContext.config.globalProperties;
+    const comList = ref([]);
+    const pickCom = ref("");
+    const isHiddenSelect = ref(false);
+    const isShowTesting = ref(false);
+    const isShowSettlement = computed(
+      () => store.getters["GameZone/isShowSettlement"]
+    );
 
     const windowActions = (types) => {
       store.dispatch(
@@ -31,7 +50,20 @@ export default {
 
     const closeShadow = () => {
       store.dispatch("handleIsShowShadow", false);
+      store.dispatch("GameZone/handleIsShowSettlement", false);
+      isShowTesting.value = false;
     };
+
+    const hiddenSelect = () => (isHiddenSelect.value = !isHiddenSelect.value);
+
+    const saveCom = () => store.dispatch("handleCOM", pickCom.value);
+
+    const searchComport = async () => {
+      comList.value = (await Serialport.list()).map((el) => el.path);
+      console.log(comList.value);
+    };
+
+    const openTesting = () => (isShowTesting.value = true);
 
     onBeforeMount(() => {
       window.ipcRenderer.once("send-path-data", (eve, args) => {
@@ -39,18 +71,34 @@ export default {
           "handleResourceDir",
           `${args.documents.replaceAll("\\", "/")}/tail-teeth`
         );
-        store.dispatch("handleConfig", require("@/assets/resources/demo.json"));
+        store.dispatch(
+          "handleConfig",
+          require("@/assets/resources/sample.json")
+        );
       });
       window.ipcRenderer.send("get-path-data");
+    });
+
+    onMounted(() => {
+      searchComport();
     });
 
     return {
       controlWindowActions,
       isShowShadow,
       pickConfig,
+      comList,
       windowActions,
-      _,
+      lodash,
       closeShadow,
+      hiddenSelect,
+      searchComport,
+      pickCom,
+      isHiddenSelect,
+      openTesting,
+      saveCom,
+      isShowTesting,
+      isShowSettlement,
     };
   },
 };
@@ -59,6 +107,7 @@ export default {
 <template>
   <div class="tail-teeth">
     <div class="top-list">
+      <img src="@/assets/img/svg/wash_hands.svg" alt="" @click="openTesting" />
       <img
         src="@/assets/img/svg/window_shrink.svg"
         alt=""
@@ -67,6 +116,7 @@ export default {
       <img
         src="@/assets/img/svg/window_zoom_out.svg"
         v-if="controlWindowActions"
+        alt=""
         @click="windowActions('+')"
       />
       <img
@@ -81,15 +131,35 @@ export default {
         alt=""
       />
     </div>
-    <img class="logo" src="@/assets/img/logo/logo_120.png" />
+    <img
+      class="logo"
+      @click="hiddenSelect"
+      src="@/assets/img/logo/logo_120.png"
+      alt=""
+    />
+    <select
+      :class="['select', { 'select-none': isHiddenSelect }]"
+      v-model="pickCom"
+      @click="searchComport"
+      @change="saveCom"
+    >
+      <option v-for="list in comList" :key="list" :value="list">
+        {{ list }}
+      </option>
+    </select>
     <div
-      :class="['shadow', { 'shadow-show': isShowShadow }]"
+      :class="[
+        'shadow',
+        { 'shadow-show': isShowShadow || isShowTesting || isShowSettlement },
+      ]"
       @click="closeShadow"
     ></div>
     <AnswerPopWindow
-      v-if="!_.isEmpty(pickConfig)"
+      v-if="!lodash.isEmpty(pickConfig)"
       :class="{ 'shadow-show': isShowShadow }"
     />
+    <TestingPop :class="{ 'shadow-show': isShowTesting }" />
+    <SettlementPop :class="{ 'shadow-show': isShowSettlement }" />
     <main>
       <router-view></router-view>
     </main>
@@ -125,6 +195,18 @@ body {
     //height: 5%;
     top: 10px;
     left: 20px;
+  }
+  .select {
+    display: block;
+    position: fixed;
+    width: 120px;
+    //height: 5%;
+    top: 30px;
+    left: 120px;
+    @extend %select;
+  }
+  .select-none {
+    display: none;
   }
   .top-list {
     width: 100%;

@@ -1,6 +1,8 @@
 <script>
 import { useStore } from "vuex";
 import { computed, getCurrentInstance, reactive, ref, watch } from "vue";
+import Serialport from "serialport";
+import { delay } from "@/assets/api/delay";
 
 export default {
   name: "Question",
@@ -15,6 +17,12 @@ export default {
     const isImgQuestion = ref(false);
     const isHideQuestion = ref(false);
     const isStop = ref(true);
+    const checkScanList = computed(
+      () => store.getters["GameZone/checkScanList"]
+    );
+    const triggerFinalSettlement = computed(
+      () => store.getters["trigger/triggerFinalSettlement"]
+    );
     const titleImg = reactive({
       data: null,
     });
@@ -29,7 +37,7 @@ export default {
         ],
       },
       {
-        title: "2) 在時間內，各組透過 BT Scanner ，選條碼(A,B,C,D)來答題。",
+        title: "2) 在時間內，各組透過 BT Scanner ，選條碼來答題。",
         detail: [],
       },
       {
@@ -41,10 +49,81 @@ export default {
         detail: [],
       },
     ]);
+    const change = [
+      {
+        from: "045",
+        to: "01",
+      },
+      {
+        from: "052",
+        to: "02",
+      },
+      {
+        from: "044",
+        to: "03",
+      },
+      {
+        from: "056",
+        to: "04",
+      },
+      {
+        from: "2B",
+        to: "05",
+      },
+      {
+        from: "05",
+        to: "06",
+      },
+    ];
     const { _ } = getCurrentInstance().appContext.config.globalProperties;
+    const isShowMaxImg = ref(false);
+    const com = computed(() => store.getters.com);
+    let mainPort;
+    let temp = [];
 
     watch(timeCount, (newIndex) => {
       if (newIndex === "00") isStop.value = true;
+    });
+
+    watch(isStop, (newIndex) => {
+      if (!newIndex) {
+        //  main port listen
+        console.log("Listen!!!!");
+        mainPort = new Serialport(com.value, { baudRate: 9600 });
+        temp = [];
+        store.dispatch("GameZone/handleScanBuffer", temp);
+        mainPort.on("data", (buf) => {
+          let str = buf
+            .toString()
+            .substring(0, buf.toString().length - 1)
+            .split(":")
+            .map((e, i) =>
+              !i ? change.find((el) => e.lastIndexOf(el.from) !== -1).to : e
+            )
+            .join(":");
+          console.log(str);
+          if (!temp.find((el) => el.substring(0, 2) === str.substring(0, 2))) {
+            temp.push(str);
+            store.dispatch(
+              "GameZone/handleCheckScanList",
+              temp.map((el) => el.substring(0, 2))
+            );
+          }
+
+          if (checkScanList.value.length === 6)
+            delay(500).then(() => stopCounter());
+        });
+      } else {
+        //  close listen
+        console.log("Close Listen!!!!!");
+        mainPort.removeAllListeners();
+        mainPort.close();
+        store.dispatch("GameZone/handleCheckScanList", []);
+        store.dispatch(
+          "GameZone/handleScanBuffer",
+          temp.map((el) => el.substring(1))
+        );
+      }
     });
 
     const pickOut = () => {
@@ -58,13 +137,16 @@ export default {
         "GameZone/handlePickConfig",
         _.first(_.shuffle(config.value))
       );
-      // console.log(pickConfig.value);
-      // console.log(config.value);
     };
 
     const pickConfigRender = (isTry) => {
       store.dispatch("GameZone/handleIsShowOptions", 0);
       store.dispatch("trigger/handleTriggerTimeout", 0);
+      console.log(config.value.length);
+      if (config.value.length === 1) {
+        settlement();
+        return;
+      }
       pickOut();
       if (isTry) store.dispatch("GameZone/handleIsGoing", true);
       if (pickConfig.value.title)
@@ -78,7 +160,6 @@ export default {
           pickConfig.value.title["type"] === "img"
             ? require(`@/assets/resources/tail_teeth${pickConfig.value.title["path"]}`)
             : pickConfig.value.title["path"];
-
       isImgQuestion.value = pickConfig.value["title"].type !== "text";
     };
 
@@ -94,6 +175,26 @@ export default {
       store.dispatch("GameZone/handleTimeCount", "00");
     };
 
+    const resetScore = () => {
+      if (!isStop.value) return;
+      store.dispatch(
+        "trigger/handleTriggerReset",
+        store.getters["trigger/handleTriggerReset"] + 1
+      );
+      store.dispatch("handleConfig", require("@/assets/resources/demo.json"));
+      pickConfigRender(0);
+    };
+
+    const settlement = () => {
+      store.dispatch(
+        "trigger/handleTriggerFinalSettlement",
+        triggerFinalSettlement.value + 1
+      );
+      store.dispatch("GameZone/handleIsShowSettlement", true);
+    };
+
+    const showMaxImg = () => (isShowMaxImg.value = !isShowMaxImg.value);
+
     return {
       isGoing,
       isImgOptions,
@@ -104,9 +205,13 @@ export default {
       titleImg,
       isStop,
       isHideQuestion,
+      isShowMaxImg,
+      settlement,
       pickConfigRender,
       showOptions,
       stopCounter,
+      resetScore,
+      showMaxImg,
     };
   },
 };
@@ -128,6 +233,8 @@ export default {
           v-if="pickConfig.title['type'] === 'img'"
           :src="titleImg.data"
           alt=""
+          @mouseover="showMaxImg"
+          @mouseout="showMaxImg"
         />
         <iframe
           v-else
@@ -172,8 +279,13 @@ export default {
           @click="pickConfigRender(0)"
           alt=""
         />
-        <img src="@/assets/img/logo/reset.png" style="height: 70%" alt="" />
-        <img src="@/assets/img/logo/counter.png" alt="" />
+        <img
+          src="@/assets/img/logo/reset.png"
+          style="height: 70%"
+          @click="resetScore"
+          alt=""
+        />
+        <img src="@/assets/img/logo/counter.png" @click="settlement" alt="" />
       </div>
       <img
         src="@/assets/img/logo/logo_120.png"
@@ -181,6 +293,9 @@ export default {
         v-if="!isGoing"
         @click="pickConfigRender(1)"
       />
+    </div>
+    <div :class="['max-img', { 'is-show': isShowMaxImg }]">
+      <img :src="titleImg.data" alt="" />
     </div>
   </div>
 </template>
@@ -194,6 +309,7 @@ export default {
   border-radius: 5px;
   background-color: $grey1;
   padding: 10px;
+  position: relative;
   .info-page {
     width: 100%;
     height: 80%;
@@ -219,11 +335,13 @@ export default {
           font-size: 24px;
           font-weight: 900;
           margin: 0 0 15px;
+          align: left;
           @extend %flex-column-al-start-ju-start;
           span {
             padding-left: 20px;
             margin-top: 5px;
             margin-bottom: 5px;
+            align: left;
           }
         }
         .p-large {
@@ -257,6 +375,28 @@ export default {
       height: 80%;
       cursor: pointer;
     }
+  }
+  .max-img {
+    width: 700px;
+    height: 500px;
+    position: fixed;
+    overflow-y: auto;
+    @extend %scroll;
+    z-index: 30000;
+    background-color: white;
+    box-shadow: 5px 5px 10px rgba($color: #000000, $alpha: 0.3);
+    border-radius: 5px;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    display: none;
+    img {
+      width: 690px;
+      max-height: 99%;
+    }
+  }
+  .is-show {
+    display: block;
   }
 }
 .not-going {
